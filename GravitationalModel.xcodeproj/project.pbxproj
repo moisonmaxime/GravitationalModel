@@ -6,10 +6,15 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXFileReference section */
+		1BF33CCA1FD0A4E200066F38 /* GravitationalModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GravitationalModel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		1BF33CC31FD0A46A00066F38 = {
 			isa = PBXGroup;
 			children = (
+				1BF33CCA1FD0A4E200066F38 /* GravitationalModel */,
 			);
 			sourceTree = "<group>";
 		};
