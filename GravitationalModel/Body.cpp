@@ -27,7 +27,6 @@ double Body::speed() {
 
 Vector3d Body::gravitationalForce(Body* other) {
     Vector3d delta = other->position - position;
-    Vector3d test = delta * (G * mass * other->mass);
     return delta * (G * mass * other->mass / pow(delta.abs(), 3));
 }
 
@@ -39,7 +38,6 @@ Vector3d Body::acceleration(list<Body*> others) {
     list<Body*>::iterator b;
     Vector3d A = Vector3d();
     for (b = others.begin(); b != others.end(); b++) {
-        //cout << "[DEBUG] acceleration - " << name << (*b)->name << endl;
         if ((*b)->name != name) {
             A = A + acceleration(*b);
         }
@@ -49,7 +47,6 @@ Vector3d Body::acceleration(list<Body*> others) {
 
 void Body::apply(list<Body*> others, double seconds) {
     Vector3d A = acceleration(others);
-    //cout << "[DEBUG] apply - " << name << " - "<< A.desc() << endl;
     velocity = velocity + A * seconds;
     position = position + velocity * seconds;
 }
