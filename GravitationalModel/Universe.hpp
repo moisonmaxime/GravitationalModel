@@ -21,9 +21,9 @@ public:
     void jumpTo(double seconds, double persec);     // generate forecast in *seconds* seconds sampling *persec* per seconds
     void nextFrame(double seconds);                 // generate frame in *seconds* seconds
     
-    void threadedJump(double seconds, double persec);   // jumpTo multithreaded - values are incorrect (threads do work)
-    static void *jump(void* context);                   // 
-    void nextFrame(Body* body, double seconds);         // 
+    //void threadedJump(double seconds, double persec);   // jumpTo multithreaded - values are incorrect (threads do work)
+    //static void *jump(void* context);                   //
+    //oid nextFrame(Body* body, double seconds);         // 
 };
 
 struct thread_args {            // Struct to provide arguments to thread worker

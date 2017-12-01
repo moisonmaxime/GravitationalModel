@@ -7,7 +7,7 @@
 
 #include "Universe.hpp"
 
-Universe::Universe() { this->going = 0; }
+Universe::Universe() { /*this->going = 0;*/ }
 
 void Universe::jumpTo(double seconds, double persec) {
     int frames = int(seconds * persec);
@@ -24,7 +24,7 @@ void Universe::nextFrame(double seconds) {
 
 
 
-void Universe::threadedJump(double seconds, double persec) {
+//void Universe::threadedJump(double seconds, double persec) {
     list<Body *>::iterator b;
     pthread_t threads[content.size()];
     int ret[content.size()];
@@ -56,7 +56,7 @@ void Universe::threadedJump(double seconds, double persec) {
     }
 }
 
-void *Universe::jump(void* context) {
+//void *Universe::jump(void* context) {
     struct thread_args *args = (struct thread_args *) context;
     int frames = int(args->seconds * args->persec);
     for (int i=0; i<frames; i++) {
@@ -69,6 +69,6 @@ void *Universe::jump(void* context) {
     return NULL;
 }
 
-void Universe::nextFrame(Body* body, double seconds) {
+//void Universe::nextFrame(Body* body, double seconds) {
     body->apply(content, seconds);
 }
